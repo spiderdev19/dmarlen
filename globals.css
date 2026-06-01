@@ -1,0 +1,94 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-text-main;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary text-white font-dmsans font-semibold px-6 py-3 rounded-lg 
+           hover:bg-primary-dark transition-all duration-200 shadow-md hover:shadow-lg
+           hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2;
+  }
+
+  .btn-outline {
+    @apply border-2 border-primary text-primary font-dmsans font-semibold px-6 py-3 rounded-lg 
+           hover:bg-primary hover:text-white transition-all duration-200
+           hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2;
+  }
+
+  .btn-outline-white {
+    @apply border-2 border-white text-white font-dmsans font-semibold px-6 py-3 rounded-lg 
+           hover:bg-white hover:text-primary transition-all duration-200
+           hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2;
+  }
+
+  .btn-whatsapp {
+    @apply bg-whatsapp text-white font-dmsans font-semibold px-6 py-3 rounded-lg 
+           hover:bg-green-600 transition-all duration-200 shadow-md hover:shadow-lg
+           hover:-translate-y-0.5 active:translate-y-0 inline-flex items-center gap-2;
+  }
+
+  .section-title {
+    @apply font-playfair text-3xl md:text-4xl font-bold text-card-title leading-tight;
+  }
+
+  .section-sub {
+    @apply font-dmsans text-base md:text-lg text-text-gray leading-relaxed;
+  }
+
+  .service-card {
+    @apply bg-white border border-soft-pink rounded-xl p-6 
+           hover:shadow-xl hover:-translate-y-1 transition-all duration-300
+           flex flex-col gap-4;
+  }
+}
+
+/* Fade-in animation for sections */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* Stagger delays */
+.delay-100 { animation-delay: 100ms; }
+.delay-200 { animation-delay: 200ms; }
+.delay-300 { animation-delay: 300ms; }
+.delay-400 { animation-delay: 400ms; }
+
+/* Shine effect on promo banner */
+@keyframes shine {
+  from { background-position: -200% center; }
+  to   { background-position:  200% center; }
+}
+
+.promo-shine {
+  background: linear-gradient(
+    105deg,
+    #8B2252 0%,
+    #993556 40%,
+    #C9A96E 50%,
+    #993556 60%,
+    #8B2252 100%
+  );
+  background-size: 200% auto;
+  animation: shine 4s linear infinite;
+}
